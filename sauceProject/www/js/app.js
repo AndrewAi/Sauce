@@ -40,46 +40,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.shortTerm', {
+    url: '/shortTerm',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-shortTerm': {
+        templateUrl: 'templates/tab-shortTerm.html',
+        controller: 'ShortTermCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.mediumTerm', {
+      url: '/mediumTerm',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-mediumTerm': {
+          templateUrl: 'templates/tab-mediumTerm.html',
+          controller: 'MediumTermCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+
+  .state('tab.longTerm', {
+    url: '/longTerm',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-longTerm': {
+        templateUrl: 'templates/tab-longTerm.html',
+        controller: 'LongTermCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/shortTerm');
 
 });
