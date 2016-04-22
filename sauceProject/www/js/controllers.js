@@ -10,11 +10,14 @@ angular.module('starter.controllers', [])
   };
 
 
-  function addTask(){
+    function addTask() {
 
-    Task.addTask(inputData.newTask);
-    inputData.newTask = "";
-  }
+      Task.addTask(inputData.newTask);
+
+
+      inputData.newTask = "";
+    }
+
 
 
   $scope.inputData = inputData;
@@ -22,6 +25,7 @@ angular.module('starter.controllers', [])
 
 
 })
+
 
 .controller('MediumTermCtrl', function($scope, Task){})
 

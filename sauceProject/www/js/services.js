@@ -4,15 +4,12 @@ angular.module('starter.services', [])
 .factory('Task', function(){
 
   var data = {
-    tasks: [
-      {title: "Boom", added: new Date()},
-      {title: "Dooom", added: new Date()}
-    ]
+    tasks: []
   };
 
 
-  function addTask(title){
-    data.tasks.push({title: title, added: new Date()});
+  function addTask(newTask){
+    data.tasks.push(   {title: newTask, added: new Date()}   );
   }
 
 
