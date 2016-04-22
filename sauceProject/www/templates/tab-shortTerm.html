@@ -1,6 +1,32 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="List 1">
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
+
+    <!-- http://ionicframework.com/docs/components/#bar-inputs -->
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon  placeholder-icon"></i>
+        <input type="text" placeholder="Enter Task Here">
+      </label>
+      <button class="button ion-ios-plus-outline" ng-click="addTask()">
+
+      </button>
+    </div>
+
+
+
+
+
+    <ion-list>
+      <ion-item ng-repeat="task in data.tasks" >
+        <h3>{{task.title}}</h3>
+
+      </ion-item>
+    </ion-list>
+
+
+
+
+
 
   </ion-content>
 </ion-view>
