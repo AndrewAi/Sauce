@@ -3,14 +3,31 @@ angular.module('starter.services', [])
 
 .factory('Task', function(){
 
+
   var data = {
-    tasks: []
+    shortTasks: [],
+    mediumTasks: [],
+    longTasks: []
   };
 
 
-  function addTask(newTask){
-    data.tasks.push(   {title: newTask, added: new Date()}   );
+
+  function addTask(tab, newTask){
+
+    if (tab == 1) {
+      data.shortTasks.push({title: newTask, added: new Date()});
+    }
+    else if (tab == 2){
+      data.mediumTasks.push({title: newTask, added: new Date()});
+    }
+    else if (tab == 3){
+      data.longTasks.push({title: newTask, added: new Date()});
+    }
+
+
   }
+
+
 
 
 

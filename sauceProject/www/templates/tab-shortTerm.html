@@ -1,4 +1,4 @@
-<ion-view view-title="List 1">
+<ion-view view-title="To-Do">
   <ion-content class="padding">
 
     <!-- http://ionicframework.com/docs/components/#bar-inputs -->
@@ -7,25 +7,18 @@
         <i class="icon  placeholder-icon"></i>
         <input type="text" ng-model="inputData.newTask" placeholder="Enter Task Here">
       </label>
-      <button class="button ion-ios-plus-outline" ng-click="addTask()">
+      <button class="button ion-ios-plus-outline" ng-click="addTask(1)">
 
       </button>
     </div>
 
 
 
-
-
     <ion-list>
-      <ion-item ng-repeat="task in data.tasks" >
+      <ion-item ng-repeat="task in data.shortTasks" >
         <h3>{{task.title}}</h3>
-
       </ion-item>
     </ion-list>
-
-
-
-
 
 
   </ion-content>

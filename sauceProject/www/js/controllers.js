@@ -9,15 +9,11 @@ angular.module('starter.controllers', [])
     newTask: ""
   };
 
+    function addTask(tab) {
 
-    function addTask() {
-
-      Task.addTask(inputData.newTask);
-
-
+      Task.addTask(tab,inputData.newTask);
       inputData.newTask = "";
     }
-
 
 
   $scope.inputData = inputData;
@@ -27,8 +23,50 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('MediumTermCtrl', function($scope, Task){})
+.controller('MediumTermCtrl', function($scope, Task){
+
+
+  $scope.data = Task.data;
+
+
+  var inputData = {
+    newTask: ""
+  };
+
+  function addTask(tab) {
+
+    Task.addTask(tab, inputData.newTask);
+    inputData.newTask = "";
+  }
+
+
+  $scope.inputData = inputData;
+  $scope.addTask = addTask;
+
+
+})
 
 
 
-.controller('LongTermCtrl', function($scope, Task) {});
+.controller('LongTermCtrl', function($scope, Task) {
+
+  $scope.data = Task.data;
+
+
+  var inputData = {
+    newTask: ""
+  };
+
+  function addTask(tab) {
+
+    Task.addTask(tab, inputData.newTask);
+    inputData.newTask = "";
+  }
+
+
+  $scope.inputData = inputData;
+  $scope.addTask = addTask;
+
+
+
+});
