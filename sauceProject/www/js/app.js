@@ -38,7 +38,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   // Each tab has its own nav history stack:
-
+    //each of the the three states below represent one page for the app
+    // each stat is giving a html for the design of that page
+    // and a controller to add functionality to the page
   .state('tab.shortTerm', {
     url: '/shortTerm',
     views: {

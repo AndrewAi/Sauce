@@ -1,22 +1,38 @@
+
+<!--ion view is the entire space of the state thats visible to the  user-->
 <ion-view view-title="To-Do">
+<!--ion content is the body the state where most of the componemnts are displayed -->
   <ion-content class="padding">
 
+    <!-- research sources : http://ionicframework.com/docs/components/ -->
 
 
-    <!-- http://ionicframework.com/docs/components/#bar-inputs -->
+    <!-- http://ionicframework.com/docs/components/#bar-inputs
+    this div used to diplay a text input at the top of the screen where users can enter tasks
+    to the right of the box there is a plus button where when clicked will call the function addItem which
+    will add an item to the list
+    -->
     <div class="bar bar-header item-input-inset">
       <label class="item-input-wrapper">
         <i class="icon  placeholder-icon"></i>
+        <!-- ng-model is angular js that save whatever the user enters to a data model called item.name-->
         <input type="text" ng-model="item.name" placeholder="Enter Task Here">
       </label>
       <button class="button ion-ios-plus-outline" ng-click="addItem(item)">
-
       </button>
     </div>
 
+
     <ion-list>
+      <!--this is the list item within the list it self.
+           the list is popluted with list items while there is items in the shortTasks array-->
       <ion-item class="item-remove-animate" ng-repeat="item in shortTasks" >
+        <!--line below displays the name of the task -->
         <h3>{{item.name}}</h3>
+        <!-- ion-option is an option button that becomes visible when the user swipes the list item to the left
+         to unveil in this case a red trash can button that when clicked will call the removeItem function
+         passing in the index of the list item on the list to be deleted
+         -->
         <ion-option-button class="button-assertive ion-trash-a" ng-click="removeItem($index)"></ion-option-button>
       </ion-item>
     </ion-list>
