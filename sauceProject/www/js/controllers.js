@@ -1,72 +1,60 @@
 angular.module('starter.controllers', [])
 
-.controller('ShortTermCtrl', function($scope, Task) {
-
-  $scope.data = Task.data;
+  .controller('ShortTermCtrl', function ($scope) {
 
 
-  var inputData = {
-    newTask: ""
-  };
+    $scope.shortTasks = [];
+    $scope.item = {};
 
-    function addTask(tab) {
 
-      Task.addTask(tab,inputData.newTask);
-      inputData.newTask = "";
+    $scope.addItem = function (item) {
+
+      $scope.shortTasks.push(item);
+      $scope.item = {name: ""};
+    };
+
+
+    $scope.removeItem = function (index) {
+      $scope.shortTasks.splice(index, 1);
+    };
+
+
+  })
+
+
+  .controller('MediumTermCtrl', function ($scope) {
+
+
+    $scope.mediumTasks = [];
+    $scope.item = {};
+
+    $scope.addItem = function (item) {
+
+      $scope.mediumTasks.push(item);
+      $scope.item = {name: ""};
     }
 
-
-  $scope.inputData = inputData;
-  $scope.addTask = addTask;
-
-
-})
+    $scope.removeItem = function (index) {
+      $scope.mediumTasks.splice(index, 1);
+    };
 
 
-.controller('MediumTermCtrl', function($scope, Task){
+  })
 
 
-  $scope.data = Task.data;
+  .controller('LongTermCtrl', function ($scope) {
 
+    $scope.longTasks = [];
+    $scope.item = {};
 
-  var inputData = {
-    newTask: ""
-  };
+    $scope.addItem = function (item) {
 
-  function addTask(tab) {
+      $scope.longTasks.push(item);
+      $scope.item = {name: ""};
+    }
 
-    Task.addTask(tab, inputData.newTask);
-    inputData.newTask = "";
-  }
+    $scope.removeItem = function (index) {
+      $scope.longTasks.splice(index, 1);
+    };
 
-
-  $scope.inputData = inputData;
-  $scope.addTask = addTask;
-
-
-})
-
-
-
-.controller('LongTermCtrl', function($scope, Task) {
-
-  $scope.data = Task.data;
-
-
-  var inputData = {
-    newTask: ""
-  };
-
-  function addTask(tab) {
-
-    Task.addTask(tab, inputData.newTask);
-    inputData.newTask = "";
-  }
-
-
-  $scope.inputData = inputData;
-  $scope.addTask = addTask;
-
-
-
-});
+  });
