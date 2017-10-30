@@ -1,7 +1,7 @@
 # Sauce
 Repo for an ionic to-list app as part of a project i have to do for college
 
-Sauce is the name of the Ionic list app that I required to create as part of my college course.
+Sauce is the name of the Ionic list app that I was required to create as part of my college course.
 
 The app has a simple design.
 in the header of the app there is a text box, which allows you to input your task.
